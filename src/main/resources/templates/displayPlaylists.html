@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Playlists</title>
+  <link rel="stylesheet" th:href="@{/css/displayplaylist.css}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+</head>
+<body>
+
+	<section id="Header">
+		<header>
+			<div>
+				<h1>My Playlist#</h1>
+			</div>
+		</header>
+	</section>
+	<section id="Body">
+		<div class="playlist-container">
+			<div th:each="pllist:${allPlaylists}" class="playlist">
+				<h3 th:text="${pllist.name}"></h3>
+				<ul>
+					<li th:each="song:${pllist.songs}"><span
+						th:text="${song.name}"></span> <audio controls
+							th:src="${song.link}" type="audio/mpeg"></audio></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="sidebar">
+		<div class="sidebar">
+			<div class="logo">
+				<img src="css/Screenshot_2024-01-12_143155-removebg-preview.png"
+					alt="logo">
+			</div>
+			<div class="admin-choices"> <a
+					href="createPlaylist" class="cta-button">Create Playlist</a> <br>
+				<a href="displayPlaylists" class="cta-button">View Playlist</a> <br>
+			</div>
+		</div>
+	</section>
+
+</body>
+</html>

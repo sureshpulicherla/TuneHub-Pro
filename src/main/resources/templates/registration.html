@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Tune hub Register </title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="css/Screenshot_2024-01-12_143155-removebg-preview.png" alt="">
+      <h1>TuneHub </h1>
+    </div>
+  </header>
+  <section>
+    <div class="register-container">
+      <header>
+        <h1>Sign up to start listening</h1>
+      </header>
+      <form action="register" method="post">
+        <label>User Name</label>
+        <input type="text" name="username" />
+        <br>
+        <label>E-mail</label>
+        <input type="text" name="email" />
+        <br>
+        <label>Password</label>
+        <input type="password" name="password" />
+        <br>
+        <label>Gender</label>
+        Male<input type="radio" name="gender" value="male" />
+        Female<input type="radio" name="gender" value="Female" />
+        Other<input type="radio" name="gender" value="Other" />
+        <br>
+
+        <label>Role</label>
+        Admin<input type="radio" name="role" value="admin" />
+        Customer<input type="radio" name="role" value="customer" />
+        <br>
+        <label>Address</label>
+        <textarea name="address"></textarea>
+        <br>
+        <input type="submit" value="Next" />
+        <p>Already have an account? <a href="login">Login here</a></p>
+      </form>
+    </div>
+  </section>
+</body>
+
+</html>

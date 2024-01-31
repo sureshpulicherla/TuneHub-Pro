@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" th:href="@{/css/addsong.css}">
+<title>Add Song</title>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Audiowide">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Sofia">
+</head>
+
+<body>
+	<div class="head">
+		<h2>Add A New Song</h2>
+	</div>
+	<div class="form-content">
+		<form action="addSong" method="post">
+			<label>Name</label><br> <input type="text" name="name"><br>
+
+			<label>Artist</label><br> <input type="text" name="artist"><br>
+
+			<label>Genre</label><br> <input type="text" name="genre"><br>
+
+			<label>Link</label><br> <input type="text" name="link"><br>
+
+		<input
+				type="submit" value="Add">
+		</form>
+
+	</div>
+
+</body>
+
+</html>

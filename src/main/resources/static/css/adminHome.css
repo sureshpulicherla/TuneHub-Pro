@@ -1,0 +1,57 @@
+@charset "ISO-8859-1";
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: aliceblue;
+  background-color: rgb(20, 25, 25);
+  font-family: "Audiowide", sans-serif;
+}
+
+.head {
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.head img {
+  height: 200px;
+  width: 300px;
+
+}
+
+.head h1 {
+  padding: 0.7em;
+  color: rgb(0, 134, 16);
+  font-size: 40px;
+  font-family: "Sofia", sans-serif;
+}
+
+.links {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.cta-button {
+  background-color: #4CAF50;
+  color: #000000;
+  padding: 1em 1em;
+  text-decoration: none;
+  font-size: 1em;
+  border-radius: 5px;
+  width: 150px;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.cta-button:hover {
+  background-color: aliceblue;
+  color: black;
+  transition: 0.5s;
+}

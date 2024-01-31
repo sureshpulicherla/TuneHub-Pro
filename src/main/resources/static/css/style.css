@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  font-family: "Audiowide", sans-serif;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  background-color: black;
+  width: 100%;
+}
+
+.logo h1 {
+  margin-left: -50px;
+  color: green;
+}
+
+img {
+  width: 160px;
+}
+
+header {
+  color: white;
+}
+
+.register-container {
+  display: flex;
+  align-items: center;
+justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
+  color: white;
+  font-family: sans-serif;
+}
+form{
+	width:30%;
+	padding: 10px;
+}
+
+.register-container h1 {
+  font-family: "Sofia", sans-serif;
+  font-size: 40px;
+  margin-left: 10px;
+  margin-top: 120px;
+}
+
+label {
+  display: block;
+  font-size: 15px;
+  padding-top: 10px;
+  color: rgb(180, 105, 250);
+  margin-bottom: 10px;
+}
+
+.register-container input[type="text"],
+.register-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #037c07;
+  font-size: 15px;
+}
+
+.register-container input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+}
+
+.register-container input[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  background-color: #4CAF50;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  font-family: "Audiowide", sans-serif;
+}
+
+textarea {
+  width: auto;
+  width: 100%;
+  padding: 10px;
+  height: 80px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form a {
+  color: rgb(255, 209, 3);
+}
