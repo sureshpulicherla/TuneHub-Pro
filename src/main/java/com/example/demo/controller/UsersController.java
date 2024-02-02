@@ -17,10 +17,6 @@ import jakarta.servlet.http.HttpSession;
 
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.GetMapping;
-
-
-
-
 @Controller
 public class UsersController {
 	@Autowired
@@ -33,14 +29,9 @@ public class UsersController {
 	public String addUsers(@ModelAttribute Users user) {
 		boolean userStatus = service.emailExists(user.getEmail());
 		if(userStatus  == false) {
-			service.addUser(user);
-			System.out.println("user added");
+			service.addUser(user);	
 		}
-		else {
-			System.out.println("user already exists");
-		}
-		
-		return "login";
+		return "login";	
 	}
 	
 	@PostMapping("/validate")

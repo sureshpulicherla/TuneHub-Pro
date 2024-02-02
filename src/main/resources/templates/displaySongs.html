@@ -1,53 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="ISO-8859-1">
-  <title>Admin View Songs</title>
-  <link rel="stylesheet" th:href="@{/css/displaySong.css}">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<meta charset="ISO-8859-1">
+<title>Admin View Songs</title>
+<link rel="stylesheet" th:href="@{/css/displaySong.css}">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Audiowide">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Sofia">
 </head>
 
 <body>
+	<section id="Header-Section">
+		<header>
+			<div>
+				<h1>TuneHub Songs</h1>
+			</div>
+		</header>
+	</section>
 
-  <header>
-    <div>
-      <h1>TuneHub Playlists</h1>
-    </div>
-  </header>
 
-  <section id="Grid">
-    <div class="grid-container">
-      <div class="song-card" th:each="song:${songs}">
-        <div class="info">
-          <h3 th:text="${song.name}">Song Title</h3>
-          <p th:text="${song.artist}">Artist</p>
-        </div>
-        <audio controls="controls">
-          <source th:src="${song.link}" type="audio/mpeg">
-        </audio>
-      </div>
-    </div>
-  </section>
+	<section id="Grid-Section">
+		<div class="grid-container">
+			<div class="song-card" th:each="song:${songs}">
+				<div class="info">
+					<img alt="None" th:src="@{'/images/' +${song.imageLink}}">
+					<h3 th:text="${song.name}">Song Title</h3>
+					<p th:text="${song.artist}">Artist</p>
+				</div>
+				<audio controls="controls">
+					<source th:src="${song.link}" type="audio/mpeg">
+				</audio>
+			</div>
+		</div>
+	</section>
 
-  <section>
-    <div class="sidebar">
-      <div class="logo">
-        <img src="css/Screenshot_2024-01-12_143155-removebg-preview.png" alt="logo">
-      </div>
+	<section id="Sidebar-section">
+		<div class="sidebar">
+			<div class="logo">
+				<img src="css/newLogo-removebg-preview.png"
+					alt="logo">
+			</div>
 
-      <div class="admin-choices">
-        <a href=newSong class="cta-button">Add a new Song</a>
-        <br>
-        <a href="displaySongs" class="cta-button">View Songs</a>
-        <br>
-        <a href="createPlaylist" class="cta-button">Create Playlist</a>
-        <br>
-        <a href="displayPlaylists" class="cta-button">View Playlist</a>
-        <br>
-      </div>
-    </div>
-  </section>
+			<div class="admin-choices">
+				<a href=newSong class="cta-button">Add a new Song</a> <br> <a
+					href="displaySongs" class="cta-button">View Songs</a> <br> <a
+					href="createPlaylist" class="cta-button">Create Playlist</a> <br>
+				<a href="displayPlaylists" class="cta-button">View Playlist</a> <br>
+			</div>
+		</div>
+	</section>
 
 </body>
 

@@ -21,8 +21,9 @@ public class SongController {
 		
 		boolean songStatus = service.songExists(song.getName());
 		if(songStatus == false) {
+			song.setImageLink(song.getImageLink());
 			service.addSong(song);
-			System.out.println("Song added successfully");
+			
 		}
 		else {
 			System.out.println("Song already exists");

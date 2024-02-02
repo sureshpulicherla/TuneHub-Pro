@@ -107,7 +107,7 @@ header h1 {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	background-color: #333;
+	background-color: #131212;
 	width: 270px;
 	position: fixed;
 	top: 0;
@@ -120,8 +120,8 @@ header h1 {
 }
 
 .logo img {
-	width: 350px;
-	height: 300px;
+	width: 250px;
+	height: 250px;
 }
 
 .sidebar .admin-choices {
