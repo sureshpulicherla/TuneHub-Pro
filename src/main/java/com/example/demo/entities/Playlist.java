@@ -8,10 +8,10 @@ import jakarta.persistence.*;
 public class Playlist {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	int id;
-	String name;
+	private	int id;
+	private	String name;
 	@ManyToMany
-	List<Song> songs;
+	private	List<Song> songs;
 	public Playlist() {
 		super();
 		// TODO Auto-generated constructor stub

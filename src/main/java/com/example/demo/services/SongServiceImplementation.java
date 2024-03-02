@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +39,20 @@ public class SongServiceImplementation
 	public void updateSong(Song song) {
 		repo.save(song);
 	}
+	@Override
+	public List<Song> searchSongs(String keyword) {
+	    Song song = repo.findByName(keyword);
+	    return song != null ? Collections.singletonList(song) : Collections.emptyList();
+	}
+	@Override
+	public Song findSongById(int id) {
+		return repo.findById(id).orElse(null);
+	}
+	@Override
+	public void deleteSong(Song deletedSong) {
+		repo.delete(deletedSong);
+	}
+	
+
 
 }

@@ -8,8 +8,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.example.demo.entities.Song;
 import com.example.demo.services.SongService;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @Controller
 public class SongController {
@@ -55,5 +59,32 @@ public class SongController {
 			return "makePayment";
 		}	
 	}
+	@GetMapping("/custSongsHome")
+	public String custSongsHome(Model model) {
+		
+		List<Song> songsList = service.fetchAllSongs();
+		model.addAttribute("songs", songsList);
+		
+		return "custSongsHome";
+	}
+	
+	@GetMapping("/searchSongs")
+	public String searchSongs(@RequestParam("keyword") String keyword, Model model) {
+	    List<Song> songsList = service.searchSongs(keyword);
+	    model.addAttribute("songs", songsList);
+	    return "custSongsHome";
+	}
+
+	@PostMapping("/deleteSong")
+	public String deleteSong(@RequestParam("id") int id ) {
+	Song deletedSong=service.findSongById(id);
+	if(deletedSong != null) {
+		service.deleteSong(deletedSong);
+	}else {
+		System.out.println("Song not found");
+	}
+		return "displaySongs";
+	}
+	
 	
 }

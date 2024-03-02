@@ -14,4 +14,13 @@ public interface SongService {
 	
 	public void updateSong(Song song);
 
+	public List<Song> searchSongs(String keyword);
+
+
+	public Song findSongById(int id);
+
+	public void deleteSong(Song deletedSong);
+
+
+
 }

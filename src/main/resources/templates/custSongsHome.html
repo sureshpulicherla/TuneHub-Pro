@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/displaySong.css}">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Audiowide">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Sofia">
+	<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+	<section id="Header-Section">
+		<header>
+			<div>
+				<h1>TuneHub Songs</h1>
+			</div>
+			<div>
+					<form action="/searchSongs" method="GET">
+						<input type="text" name="keyword"
+							placeholder="Search for a song...">
+						<button type="submit">
+							<i class="fa fa-search" style="font-size: 30px; color: white;"></i>
+						</button>
+					</form>
+				</div>
+			<div>
+				<a href="login">Logout</a>
+			</div>
+		</header>
+	</section>
+
+
+	<section id="Grid-Section">
+		<div class="grid-container">
+			<div class="song-card" th:each="song:${songs}">
+				<div class="info">
+					<img alt="None" th:src="@{'/images/' +${song.imageLink}}">
+					<h3 th:text="${song.name}">Song Title</h3>
+					<span th:text="${song.artist}">Artist</span>
+				</div>
+				<audio controls="controls">
+					<source th:src="${song.link}" type="audio/mpeg">
+				</audio>
+			</div>
+		</div>
+	</section>
+
+	<section id="Sidebar-section">
+		<div class="sidebar">
+			<div class="logo">
+				<img src="css/newLogo-removebg-preview.png" alt="logo">
+			</div>
+
+			<div class="admin-choices">
+			<a href="custSongsHome" class="cta-button">View All Songs</a> <br>
+				<a href="createPlaylist" class="cta-button">Create Playlist</a> <br>
+				<a href="displayPlaylists" class="cta-button">View Playlist</a> <br>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>

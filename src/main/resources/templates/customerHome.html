@@ -3,12 +3,13 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>TuneHub Home</title>
-<link rel="stylesheet" th:href="@{/css/customer.css}">
+<link rel="stylesheet" th:href="@{/css/displaySong.css}">
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Audiowide">
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Sofia">
-
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
@@ -53,6 +54,7 @@
 		</section>
 
 
+
 	</div>
 
 
@@ -67,8 +69,22 @@
 				<div>
 					<h1>TuneHub Songs</h1>
 				</div>
-				<div >
-					<a href="login">Logout</a>
+
+				<div>
+					<form action="/searchSongs" method="GET">
+						<input type="text" name="keyword"
+							placeholder="what do you want play?">
+						<button type="submit">
+							<i class="fa fa-search" style="font-size: 30px; color: white;"></i>
+						</button>
+					</form>
+				</div>
+
+
+				<div>
+					<form action="logout">
+						<a href="login">Logout</a>
+					</form>
 				</div>
 			</header>
 		</section>
@@ -81,7 +97,7 @@
 					<div class="info">
 						<img alt="None" th:src="@{'/images/' +${song.imageLink}}">
 						<h3 th:text="${song.name}">Song Title</h3>
-						<p th:text="${song.artist}">Artist</p>
+						<span th:text="${song.artist}">Artist</span>
 					</div>
 					<audio controls="controls">
 						<source th:src="${song.link}" type="audio/mpeg">
@@ -90,13 +106,15 @@
 			</div>
 		</section>
 
+
+
 		<section>
 			<div class="sidebar">
 				<div class="logo">
-					<img src="css/newLogo-removebg-preview.png"
-						alt="logo">
+					<img src="css/newLogo-removebg-preview.png" alt="logo">
 				</div>
 				<div class="admin-choices">
+					<a href="custSongsHome" class="cta-button">View All Songs</a> <br>
 					<a href="createPlaylist" class="cta-button">Create Playlist</a> <br>
 					<a href="displayPlaylists" class="cta-button">View Playlist</a> <br>
 
@@ -104,6 +122,9 @@
 			</div>
 
 		</section>
+
+
+
 
 
 	</div>

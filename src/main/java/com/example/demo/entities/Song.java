@@ -8,16 +8,16 @@ import jakarta.persistence.*;
 public class Song {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	int id;
-	String name;
-	String artist;
-	String genre;
-	String link;
+	private	int id;
+	private	String name;
+	private	String artist;
+	private	String genre;
+	private	String link;
 	
-	String imageLink;
+	private	String imageLink;
 	
 	@ManyToMany
-	List<Playlist> playlists;
+	private	List<Playlist> playlists;
 
 	public Song(int id, String name, String artist, String genre, String link, String imageLink,
 			List<Playlist> playlists) {
@@ -33,7 +33,6 @@ public class Song {
 
 	public Song() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getId() {

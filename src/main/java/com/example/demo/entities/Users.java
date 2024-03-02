@@ -9,19 +9,18 @@ import jakarta.persistence.Id;
 public class Users {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	int id;
-	String username;
-	String email;
-	String  password;
-	String gender;
-	String role;
-	String address;
+	private	int id;
+	private	String username;
+	private String email;
+	private	String  password;
+	private	String gender;
+	private	String role;
+	private	String address;
 	
-	boolean isPremium;
+	private boolean isPremium;
 	
 	public Users() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Users(int id, String username, String email, String password, String gender, String role, String address,

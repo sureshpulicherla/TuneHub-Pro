@@ -8,36 +8,24 @@ body {
   background-color: black;
   font-family: "Audiowide", sans-serif;
 }
-
-.logo {
-  display: flex;
-  align-items: center;
-  position: fixed;
-  background-color: black;
-  width: 100%;
+.logo{
+	display: flex;
+	position: fixed;
+}
+.logo img{
+	width:200px;
+	height: 200px;
 }
 
-.logo h1 {
-  margin-left: -50px;
-  color: green;
-}
-
-img {
-  width: 160px;
-}
-
-header {
-  color: white;
-}
 
 .register-container {
   display: flex;
   align-items: center;
 justify-content: center;
-  min-height: 100vh;
   flex-direction: column;
   color: white;
   font-family: sans-serif;
+ 
 }
 form{
 	width:30%;
@@ -48,7 +36,8 @@ form{
   font-family: "Sofia", sans-serif;
   font-size: 40px;
   margin-left: 10px;
-  margin-top: 120px;
+   margin-top: 3em;
+ 
 }
 
 label {
