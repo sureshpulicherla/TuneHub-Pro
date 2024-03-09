@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.demo.entities.Playlist;
 import com.example.demo.entities.Song;
+import com.example.demo.repositories.PlaylistRepository;
+import com.example.demo.repositories.SongRepository;
 import com.example.demo.services.SongService;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -19,6 +22,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class SongController {
 	@Autowired
 	SongService service;
+	
+	@Autowired
+	SongRepository songRepository;
+	
+	@Autowired
+	PlaylistRepository playlistRepository;  
 	
 	@PostMapping("/addSong")
 	public String addSong(@ModelAttribute Song song) {
@@ -79,11 +88,13 @@ public class SongController {
 	public String deleteSong(@RequestParam("id") int id ) {
 	Song deletedSong=service.findSongById(id);
 	if(deletedSong != null) {
+		for(Playlist playlist:deletedSong.getPlaylists()) {
+			playlist.getSongs().remove(deletedSong);
+			playlistRepository.save(playlist);
+		}
 		service.deleteSong(deletedSong);
-	}else {
-		System.out.println("Song not found");
 	}
-		return "displaySongs";
+		return "redirect:displaySongs";
 	}
 	
 	

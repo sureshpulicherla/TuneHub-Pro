@@ -37,11 +37,11 @@
 					<source th:src="${song.link}" type="audio/mpeg">
 				</audio>
 				<div>
-				
+
 					<form action="/deleteSong" method="post">
 						<input type="hidden" name="id" th:value="${song.id}">
 						<button type="submit">
-							
+
 							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
 								fill="none" viewBox="0 0 24 24" stroke="currentColor"
 								stroke-width="2">
@@ -50,8 +50,6 @@
     </svg>
 						</button>
 					</form>
-
-
 				</div>
 			</div>
 		</div>
